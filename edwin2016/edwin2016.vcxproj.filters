@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="gui files">
+      <UniqueIdentifier>{db2cf7f9-198d-4a6f-816f-b2a8a3a06f40}</UniqueIdentifier>
+      <Extensions>h;c;cpp</Extensions>
+    </Filter>
+    <Filter Include="resource files">
+      <UniqueIdentifier>{aa7cd69f-72e2-4249-aaa5-5f03475f7806}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;resx;png</Extensions>
+    </Filter>
+    <Filter Include="mylib files">
+      <UniqueIdentifier>{a4bb6003-7a88-44de-88ab-ca1ff1a195ed}</UniqueIdentifier>
+      <Extensions>h;c;cpp</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="gui\drony2016.cpp">
+      <Filter>gui files</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\stdafx.cpp">
+      <Filter>gui files</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\gamewindow.cpp">
+      <Filter>gui files</Filter>
+    </ClCompile>
+    <ClCompile Include="mylib\gamelib.cpp">
+      <Filter>mylib files</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\maindialog.cpp">
+      <Filter>gui files</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\scoredialog.cpp">
+      <Filter>gui files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="gui\stdafx.h">
+      <Filter>gui files</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\drony2016.h">
+      <Filter>gui files</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\gamewindow.h">
+      <Filter>gui files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\resource.h">
+      <Filter>resource files</Filter>
+    </ClInclude>
+    <ClInclude Include="mylib\gamelib.h">
+      <Filter>mylib files</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\maindialog.h">
+      <Filter>gui files</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\scoredialog.h">
+      <Filter>gui files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource\drony2016.rc">
+      <Filter>resource files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resource\icon.ico">
+      <Filter>resource files</Filter>
+    </Image>
+    <Image Include="resource\gameblocks_gras.bmp">
+      <Filter>resource files</Filter>
+    </Image>
+    <Image Include="resource\gameblocks_steen.bmp">
+      <Filter>resource files</Filter>
+    </Image>
+    <Image Include="gameblocks_gras.bmp">
+      <Filter>resource files</Filter>
+    </Image>
+    <Image Include="gameblocks_steen.bmp">
+      <Filter>resource files</Filter>
+    </Image>
+    <Image Include="gameblocks_basis.bmp">
+      <Filter>resource files</Filter>
+    </Image>
+    <Image Include="gameblocks_doel.bmp">
+      <Filter>resource files</Filter>
+    </Image>
+    <Image Include="resource\gameblocks_basis.bmp">
+      <Filter>resource files</Filter>
+    </Image>
+    <Image Include="resource\gameblocks_doel.bmp">
+      <Filter>resource files</Filter>
+    </Image>
+    <Image Include="gameblocks_doel1.bmp">
+      <Filter>resource files</Filter>
+    </Image>
+    <Image Include="resource\gameblocks_doel1.bmp">
+      <Filter>resource files</Filter>
+    </Image>
+    <Image Include="gameblocks_water.bmp">
+      <Filter>resource files</Filter>
+    </Image>
+    <Image Include="resource\gameblocks_water.bmp">
+      <Filter>resource files</Filter>
+    </Image>
+    <Image Include="gameblocks_tree.bmp">
+      <Filter>resource files</Filter>
+    </Image>
+    <Image Include="resource\gameblocks_tree.bmp">
+      <Filter>resource files</Filter>
+    </Image>
+    <Image Include="gameblocks_drone.bmp">
+      <Filter>resource files</Filter>
+    </Image>
+    <Image Include="resource\gameblocks_drone.bmp">
+      <Filter>resource files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
