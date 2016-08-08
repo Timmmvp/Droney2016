@@ -51,6 +51,7 @@ extern LOCATION* pTargetLoc;			// target locations
 extern BYTE nGameMode;					// modi of the game: 0 = maindialog, 1 = game, 2 = pauze
 extern UINT16 nGameTimer;				// running timer
 
+#define FROM_2D_TO_1D(x,y)				pGamearea[x + nGameareaW * y]
 /**
 * Update the targetcount
 */

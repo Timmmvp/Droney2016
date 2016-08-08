@@ -382,22 +382,28 @@ void UpdateGamewindow()
  */
 BOOL CheckMove(UINT16 x, UINT16 y)
 {
-
-	// TODO: wat te doen met rots, bomen en water?
-	UNREFERENCED_PARAMETER(x); //onderdrukt compiler-foutmeldingen, omdat deze variabelen nu nog niet gebruikt worden
-	UNREFERENCED_PARAMETER(y);
-
-	return TRUE;
-};
-
-/**
- * Apply the sign on the current drone location
- */
-void ApplyLocation()
-{
-	switch (pGamearea[oDroneLoc.x + nGameareaW * oDroneLoc.y])
+	if (FROM_2D_TO_1D(x, y) == GAMEAREA_STONE)
 	{
-		case GAMEAREA_HOME: 
+		return FALSE;
+	}
+	// TODO: wat te doen met rots, bomen en water?
+	//UNREFERENCED_PARAMETER(x); //onderdrukt compiler-foutmeldingen, omdat deze variabelen nu nog niet gebruikt worden
+	//UNREFERENCED_PARAMETER(y);
+
+	else
+	{
+		return TRUE;
+	};
+
+}
+	/**
+	 * Apply the sign on the current drone location
+	 */
+	void ApplyLocation()
+	{
+		switch (pGamearea[oDroneLoc.x + nGameareaW * oDroneLoc.y])
+		{
+		case GAMEAREA_HOME:
 			nGameMode = GAMEMODE_MENU;
 
 			// Show the score dialog
@@ -407,5 +413,5 @@ void ApplyLocation()
 			DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_MAINDIALOG), hGamewindowWnd, (DLGPROC)MaindialogProc);
 
 			break;
+		};
 	};
-};
