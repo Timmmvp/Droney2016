@@ -382,7 +382,7 @@ void UpdateGamewindow()
  */
 BOOL CheckMove(UINT16 x, UINT16 y)
 {
-	if (FROM_2D_TO_1D(x, y) == GAMEAREA_STONE)
+	if (pGamearea[FROM_2D_TO_1D(x, y)] == GAMEAREA_STONE)
 	{
 		return FALSE;
 	}
