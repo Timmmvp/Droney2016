@@ -360,7 +360,7 @@ LRESULT CALLBACK GamewindowProc(HWND hWnd, UINT nMessage, WPARAM wParam, LPARAM 
 void SetTargetCount()
 {
 	WCHAR sText[250];	// text buffer
-
+	//if (pGamearea[FROM_2D_TO_1D(oDroneLoc.x, oDroneLoc.y)] == GAMEAREA_DROP1) GAMEAREA_DROP0 = GAMEAREA_DROP1 && nTargetsFound++;
 	// Update the content
 	wsprintf(sText, _T("Targets: %d / %d"), nTargetsFound, nTargetCount);
 	SetWindowText(hChildTargets, sText);
