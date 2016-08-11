@@ -33,6 +33,9 @@
     <ClCompile Include="gui\scoredialog.cpp">
       <Filter>gui files</Filter>
     </ClCompile>
+    <ClCompile Include="gui\GameRules.cpp">
+      <Filter>gui files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gui\stdafx.h">
@@ -54,6 +57,9 @@
       <Filter>gui files</Filter>
     </ClInclude>
     <ClInclude Include="gui\scoredialog.h">
+      <Filter>gui files</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\GameRules.h">
       <Filter>gui files</Filter>
     </ClInclude>
   </ItemGroup>

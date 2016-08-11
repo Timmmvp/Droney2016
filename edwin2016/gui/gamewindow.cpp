@@ -4,6 +4,7 @@
 
 #include "stdafx.h"
 #include "gamewindow.h"
+#include "GameRules.h"
 
 // Global variables
 
@@ -412,21 +413,17 @@ BOOL CheckMove(UINT16 x, UINT16 y)
 		case GAMEAREA_HOME:
 			if (AllTargetsFound())
 			{
-				nGameMode = GAMEMODE_MENU;
-
-				// Show the score dialog
-				DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_SCOREDIALOG), hGamewindowWnd, (DLGPROC)ScoredialogProc);
-
-				// Show the main dialog
-				DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_MAINDIALOG), hGamewindowWnd, (DLGPROC)MaindialogProc);
+				DroneAtHomeRule();
 			}
 			break;
 		
 		case GAMEAREA_DROP0:
-			nTargetsFound++;
-			pGamearea[FROM_2D_TO_1D(oDroneLoc.x, oDroneLoc.y)] = GAMEAREA_DROP1;
-
+			MarkTargetFoundRule();
 			break;
+
+		case GAMEAREA_TREES:
+			DelayOnTreeHitRule();
+			break; 
 		};
 	};
 

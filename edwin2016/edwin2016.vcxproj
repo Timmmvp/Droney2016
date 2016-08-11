@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="gui\drony2016.cpp" />
+    <ClCompile Include="gui\GameRules.cpp" />
     <ClCompile Include="gui\gamewindow.cpp" />
     <ClCompile Include="gui\maindialog.cpp" />
     <ClCompile Include="gui\scoredialog.cpp" />
@@ -28,6 +29,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gui\drony2016.h" />
+    <ClInclude Include="gui\GameRules.h" />
     <ClInclude Include="gui\gamewindow.h" />
     <ClInclude Include="gui\maindialog.h" />
     <ClInclude Include="gui\scoredialog.h" />
