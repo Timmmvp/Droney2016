@@ -15,6 +15,11 @@ void ScoreSound()
 	Beep(1500, 50);
 }
 
+void CrashSound()
+{
+	Beep(400, 50);
+}
+
 void MarkTargetFoundRule()
 {
 	nTargetsFound++;
@@ -41,6 +46,7 @@ void DelayOnTreeHitRule()
 
 void RockCrashRule()
 {
+	CrashSound();
 	nGameMode = GAMEMODE_MENU;
 
 	// Show the score dialog
@@ -48,5 +54,6 @@ void RockCrashRule()
 
 	// Show the main dialog
 	DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_MAINDIALOG), hGamewindowWnd, (DLGPROC)MaindialogProc);
+	
 }
 
