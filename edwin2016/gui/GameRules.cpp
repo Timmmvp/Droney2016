@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "gamewindow.h"
+#include "crashdialog.h"
 
 
 #define DELAY		15
@@ -36,5 +37,16 @@ void DelayOnTreeHitRule()
 {
 	nGameTimer += DELAY;
 	WarningSound();
+}
+
+void RockCrashRule()
+{
+	nGameMode = GAMEMODE_MENU;
+
+	// Show the score dialog
+	DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_CRASHDIALOG), hGamewindowWnd, (DLGPROC)CrashdialogProc);
+
+	// Show the main dialog
+	DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_MAINDIALOG), hGamewindowWnd, (DLGPROC)MaindialogProc);
 }
 

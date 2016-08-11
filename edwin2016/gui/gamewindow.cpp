@@ -375,19 +375,15 @@ void UpdateGamewindow()
  */
 BOOL CheckMove(UINT16 x, UINT16 y)
 {
-	if (pGamearea[FROM_2D_TO_1D(x, y)] == GAMEAREA_STONE)
+	/*if (pGamearea[FROM_2D_TO_1D(x, y)] == GAMEAREA_STONE)
 	{
 		return FALSE;
 	}
-	// TODO: wat te doen met rots, bomen en water?
-	//UNREFERENCED_PARAMETER(x); //onderdrukt compiler-foutmeldingen, omdat deze variabelen nu nog niet gebruikt worden
-	//UNREFERENCED_PARAMETER(y);
-
-	else
-	{
-		return TRUE;
-	};
-
+	*/
+	UNREFERENCED_PARAMETER(x); //onderdrukt compiler-foutmeldingen, omdat deze variabelen nu nog niet gebruikt worden
+	UNREFERENCED_PARAMETER(y);
+	
+	return TRUE;
 }
 
 	/**
@@ -423,6 +419,10 @@ BOOL CheckMove(UINT16 x, UINT16 y)
 
 		case GAMEAREA_TREES:
 			DelayOnTreeHitRule();
+			break; 
+
+		case GAMEAREA_STONE:
+			RockCrashRule();
 			break; 
 		};
 	};
