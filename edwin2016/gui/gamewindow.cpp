@@ -109,7 +109,7 @@ LRESULT CALLBACK GamewindowProc(HWND hWnd, UINT nMessage, WPARAM wParam, LPARAM 
 			hFont = CreateFont(35, 0, 0, 0, FW_BOLD, FALSE, FALSE, FALSE, ANSI_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, DEFAULT_QUALITY, DEFAULT_PITCH | FF_SWISS, L"Arial");
 			SendMessage(hChildTitle, WM_SETFONT, WPARAM(hFont), TRUE);
 
-			hChildAuthor = CreateWindow(_T("STATIC"), _T("by Edwin Boer"), WS_VISIBLE | WS_CHILD, 430, 70, 100, 20, hWnd, NULL, hCurrentInstance, NULL);
+			hChildAuthor = CreateWindow(_T("STATIC"), _T("by Edwin Boer \nEditted by Tim van Putten"), WS_VISIBLE | WS_CHILD, 430, 70, 150, 40, hWnd, NULL, hCurrentInstance, NULL);
 			hFont = CreateFont(15, 0, 0, 0, FW_NORMAL, FALSE, FALSE, FALSE, ANSI_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, DEFAULT_QUALITY, DEFAULT_PITCH | FF_SWISS, L"Arial");
 			SendMessage(hChildAuthor, WM_SETFONT, WPARAM(hFont), TRUE);
 
