@@ -9,6 +9,14 @@
 
 // Local variables
 
+void ResetTargetPoints()
+{
+	for (INT idx = 0; idx < nTargetCount; idx++)
+	{
+		pGamearea[FROM_2D_TO_1D(pTargetLoc[idx].x, pTargetLoc[idx].y)] = GAMEAREA_DROP0;
+	}
+}
+
 /**
  * Message handler for the main dialog
  * @param hDlg					Dialog identifier
@@ -73,6 +81,7 @@ INT_PTR CALLBACK MaindialogProc(HWND hDlg, UINT nMessage, WPARAM wParam, LPARAM 
 				nGameTimer = 0;
 
 				// Switch the game on
+				ResetTargetPoints();
 				UpdateGamewindow();
 				SetTargetCount();
 				nGameMode = GAMEMODE_GAME;

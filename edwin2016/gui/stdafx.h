@@ -18,7 +18,7 @@
 #include <tchar.h>
 
 // Defines
-#define GAMEAREA_NAME					"gamearea1.txt"
+#define GAMEAREA_NAME					"game2.txt"
 #define GAMEAREA_BLOCKSIZE				16
 #define GAMEAREA_GRASS					' '
 #define GAMEAREA_STONE					'X'

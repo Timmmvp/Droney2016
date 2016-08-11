@@ -388,6 +388,20 @@ BOOL CheckMove(UINT16 x, UINT16 y)
 	};
 
 }
+
+	/**
+	* Check if the game is over (in release build all targets must be found, in debug you can choose a different implementation)
+	*/
+	BOOL AllTargetsFound() 
+	{
+		#ifdef _DEBUG
+			return nTargetsFound == nTargetCount;
+		#else
+			return nTargetsFound == nTargetCount;
+		#endif
+	}
+
+
 	/**
 	 * Apply the sign on the current drone location
 	 */
@@ -396,14 +410,16 @@ BOOL CheckMove(UINT16 x, UINT16 y)
 		switch (pGamearea[FROM_2D_TO_1D(oDroneLoc.x, oDroneLoc.y)])
 		{
 		case GAMEAREA_HOME:
-			nGameMode = GAMEMODE_MENU;
+			if (AllTargetsFound())
+			{
+				nGameMode = GAMEMODE_MENU;
 
-			// Show the score dialog
-			DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_SCOREDIALOG), hGamewindowWnd, (DLGPROC)ScoredialogProc);
+				// Show the score dialog
+				DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_SCOREDIALOG), hGamewindowWnd, (DLGPROC)ScoredialogProc);
 
-			// Show the main dialog
-			DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_MAINDIALOG), hGamewindowWnd, (DLGPROC)MaindialogProc);
-
+				// Show the main dialog
+				DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_MAINDIALOG), hGamewindowWnd, (DLGPROC)MaindialogProc);
+			}
 			break;
 		
 		case GAMEAREA_DROP0:
@@ -416,9 +432,7 @@ BOOL CheckMove(UINT16 x, UINT16 y)
 
 	void UpdateWindowAfterVisit()
 	{
-		ApplyLocation();
-		SetTargetCount();
 		UpdateGamewindow();
-		
-		
+		ApplyLocation();
+		SetTargetCount();	
 	}
