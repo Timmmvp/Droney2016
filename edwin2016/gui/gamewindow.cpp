@@ -268,7 +268,7 @@ LRESULT CALLBACK GamewindowProc(HWND hWnd, UINT nMessage, WPARAM wParam, LPARAM 
 					// Only update if in game mode
 					if (nGameMode == GAMEMODE_GAME)
 					{
-						nGameTimer++;
+						nGameTimer--;
 						wsprintf(sText, _T("Time: %02d:%02d"), nGameTimer / 60, nGameTimer % 60);
 						SetWindowText(hChildTime, sText);
 					};

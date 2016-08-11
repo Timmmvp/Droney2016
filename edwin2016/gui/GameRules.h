@@ -3,3 +3,4 @@ void MarkTargetFoundRule();
 void DroneAtHomeRule();
 void DelayOnTreeHitRule();
 void RockCrashRule();
+void GameTimerRule();

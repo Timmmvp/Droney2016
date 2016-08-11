@@ -40,7 +40,7 @@ void DroneAtHomeRule()
 
 void DelayOnTreeHitRule()
 {
-	nGameTimer += DELAY;
+	nGameTimer -= DELAY;
 	WarningSound();
 }
 

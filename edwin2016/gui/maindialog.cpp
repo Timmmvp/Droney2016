@@ -5,6 +5,7 @@
 #include "stdafx.h"
 #include "maindialog.h"
 
+
 // Global variables
 
 // Local variables
@@ -78,7 +79,7 @@ INT_PTR CALLBACK MaindialogProc(HWND hDlg, UINT nMessage, WPARAM wParam, LPARAM 
 				// Init the 'new' game
 				oDroneLoc = oHomeLoc;
 				nTargetsFound = 0;			// gamescore reset
-				nGameTimer = 0;
+				nGameTimer = nTargetCount * 30;
 
 				// Switch the game on
 				ResetTargetPoints();
