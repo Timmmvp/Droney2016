@@ -220,9 +220,7 @@ LRESULT CALLBACK GamewindowProc(HWND hWnd, UINT nMessage, WPARAM wParam, LPARAM 
 					if (oDroneLoc.y > 0 && CheckMove(oDroneLoc.x, oDroneLoc.y - 1))
 					{
 						oDroneLoc.y--;
-						UpdateGamewindow();
-
-						ApplyLocation();
+						UpdateWindowAfterVisit();
 					};
 					break;
 
@@ -231,9 +229,7 @@ LRESULT CALLBACK GamewindowProc(HWND hWnd, UINT nMessage, WPARAM wParam, LPARAM 
 					if (oDroneLoc.x < nGameareaW && CheckMove(oDroneLoc.x + 1, oDroneLoc.y))
 					{
 						oDroneLoc.x++;
-						UpdateGamewindow();
-
-						ApplyLocation();
+						UpdateWindowAfterVisit();
 					};
 					break;
 
@@ -242,9 +238,7 @@ LRESULT CALLBACK GamewindowProc(HWND hWnd, UINT nMessage, WPARAM wParam, LPARAM 
 					if (oDroneLoc.y < nGameareaH && CheckMove(oDroneLoc.x, oDroneLoc.y + 1))
 					{
 						oDroneLoc.y++;
-						UpdateGamewindow();
-
-						ApplyLocation();
+						UpdateWindowAfterVisit();
 					};
 					break;
 
@@ -253,9 +247,7 @@ LRESULT CALLBACK GamewindowProc(HWND hWnd, UINT nMessage, WPARAM wParam, LPARAM 
 					if (oDroneLoc.x > 0 && CheckMove(oDroneLoc.x - 1, oDroneLoc.y))
 					{
 						oDroneLoc.x--;
-						UpdateGamewindow();
-
-						ApplyLocation();
+						UpdateWindowAfterVisit();
 					};
 					break;
 			};
@@ -401,7 +393,7 @@ BOOL CheckMove(UINT16 x, UINT16 y)
 	 */
 	void ApplyLocation()
 	{
-		switch (pGamearea[oDroneLoc.x + nGameareaW * oDroneLoc.y])
+		switch (pGamearea[FROM_2D_TO_1D(oDroneLoc.x, oDroneLoc.y)])
 		{
 		case GAMEAREA_HOME:
 			nGameMode = GAMEMODE_MENU;
@@ -413,5 +405,20 @@ BOOL CheckMove(UINT16 x, UINT16 y)
 			DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_MAINDIALOG), hGamewindowWnd, (DLGPROC)MaindialogProc);
 
 			break;
+		
+		case GAMEAREA_DROP0:
+			nTargetsFound++;
+			pGamearea[FROM_2D_TO_1D(oDroneLoc.x, oDroneLoc.y)] = GAMEAREA_DROP1;
+
+			break;
 		};
 	};
+
+	void UpdateWindowAfterVisit()
+	{
+		ApplyLocation();
+		SetTargetCount();
+		UpdateGamewindow();
+		
+		
+	}

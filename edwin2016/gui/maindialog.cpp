@@ -69,12 +69,12 @@ INT_PTR CALLBACK MaindialogProc(HWND hDlg, UINT nMessage, WPARAM wParam, LPARAM 
 			{
 				// Init the 'new' game
 				oDroneLoc = oHomeLoc;
-				nTargetsFound = 0;
-				SetTargetCount();
+				nTargetsFound = 0;			// gamescore reset
 				nGameTimer = 0;
 
 				// Switch the game on
 				UpdateGamewindow();
+				SetTargetCount();
 				nGameMode = GAMEMODE_GAME;
 
 				// Close the dialog

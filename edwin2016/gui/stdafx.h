@@ -59,6 +59,11 @@ extern UINT16 nGameTimer;				// running timer
 void SetTargetCount();
 
 /**
-* Update the gamewindow
+* Update the gamewindow after visit by drone
+*/
+void UpdateWindowAfterVisit();
+
+/**
+* Update the Gamewindow
 */
 void UpdateGamewindow();
