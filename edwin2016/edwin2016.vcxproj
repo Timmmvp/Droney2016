@@ -43,6 +43,7 @@
     <ResourceCompile Include="resource\drony2016.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="gameblocks_energie.bmp" />
     <Image Include="gameblocks_basis.bmp" />
     <Image Include="gameblocks_doel.bmp" />
     <Image Include="gameblocks_doel1.bmp" />
@@ -60,6 +61,7 @@
     <Image Include="resource\gameblocks_tree.bmp" />
     <Image Include="resource\gameblocks_water.bmp" />
     <Image Include="resource\icon.ico" />
+    <Image Include="resource\IDB_GAMEBLOCKS_ENERGY.bmp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D20FC4B4-AA7E-4265-B440-3556AA88008E}</ProjectGuid>

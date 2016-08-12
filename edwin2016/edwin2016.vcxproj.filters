@@ -126,5 +126,11 @@
     <Image Include="resource\gameblocks_drone.bmp">
       <Filter>resource files</Filter>
     </Image>
+    <Image Include="gameblocks_energie.bmp">
+      <Filter>resource files</Filter>
+    </Image>
+    <Image Include="resource\IDB_GAMEBLOCKS_ENERGY.bmp">
+      <Filter>resource files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

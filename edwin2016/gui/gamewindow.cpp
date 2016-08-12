@@ -17,6 +17,7 @@ HBITMAP hGameareaDrop1;			// bitmap target visited
 HBITMAP hGameareaWater;			// bitmap water
 HBITMAP hGameareaTrees;			// bitmap trees
 HBITMAP hGameareaDrone;			// bitmap drone
+HBITMAP hGameareaEnergy;		// bitmap energy
 HWND hChildTitle;				// game title
 HWND hChildAuthor;				// game author
 HWND hChildTime;				// game time status
@@ -96,14 +97,16 @@ LRESULT CALLBACK GamewindowProc(HWND hWnd, UINT nMessage, WPARAM wParam, LPARAM 
 			HFONT hFont;
 
 			// Preload all bitmaps
-			hGameareaGrass = (HBITMAP)LoadImage(hCurrentInstance, MAKEINTRESOURCE(IDB_GAMEBLOCKS_GRASS), IMAGE_BITMAP, 0, 0, LR_SHARED);
-			hGameareaStone = (HBITMAP)LoadImage(hCurrentInstance, MAKEINTRESOURCE(IDB_GAMEBLOCKS_STONE), IMAGE_BITMAP, 0, 0, LR_SHARED);
-			hGameareaHome  = (HBITMAP)LoadImage(hCurrentInstance, MAKEINTRESOURCE(IDB_GAMEBLOCKS_HOME ), IMAGE_BITMAP, 0, 0, LR_SHARED);
-			hGameareaDrop0 = (HBITMAP)LoadImage(hCurrentInstance, MAKEINTRESOURCE(IDB_GAMEBLOCKS_DROP0), IMAGE_BITMAP, 0, 0, LR_SHARED);
-			hGameareaDrop1 = (HBITMAP)LoadImage(hCurrentInstance, MAKEINTRESOURCE(IDB_GAMEBLOCKS_DROP1), IMAGE_BITMAP, 0, 0, LR_SHARED);
-			hGameareaWater = (HBITMAP)LoadImage(hCurrentInstance, MAKEINTRESOURCE(IDB_GAMEBLOCKS_WATER), IMAGE_BITMAP, 0, 0, LR_SHARED);
-			hGameareaTrees = (HBITMAP)LoadImage(hCurrentInstance, MAKEINTRESOURCE(IDB_GAMEBLOCKS_TREES), IMAGE_BITMAP, 0, 0, LR_SHARED);
-			hGameareaDrone = (HBITMAP)LoadImage(hCurrentInstance, MAKEINTRESOURCE(IDB_GAMEBLOCKS_DRONE), IMAGE_BITMAP, 0, 0, LR_SHARED);
+			hGameareaEnergy = (HBITMAP)LoadImage(hCurrentInstance, MAKEINTRESOURCE(IDB_GAMEBLOCKS_ENERGY), IMAGE_BITMAP, 0, 0, LR_SHARED);
+			hGameareaGrass	= (HBITMAP)LoadImage(hCurrentInstance, MAKEINTRESOURCE(IDB_GAMEBLOCKS_GRASS ), IMAGE_BITMAP, 0, 0, LR_SHARED);
+			hGameareaStone	= (HBITMAP)LoadImage(hCurrentInstance, MAKEINTRESOURCE(IDB_GAMEBLOCKS_STONE ), IMAGE_BITMAP, 0, 0, LR_SHARED);
+			hGameareaHome	= (HBITMAP)LoadImage(hCurrentInstance, MAKEINTRESOURCE(IDB_GAMEBLOCKS_HOME  ), IMAGE_BITMAP, 0, 0, LR_SHARED);
+			hGameareaDrop0	= (HBITMAP)LoadImage(hCurrentInstance, MAKEINTRESOURCE(IDB_GAMEBLOCKS_DROP0 ), IMAGE_BITMAP, 0, 0, LR_SHARED);
+			hGameareaDrop1	= (HBITMAP)LoadImage(hCurrentInstance, MAKEINTRESOURCE(IDB_GAMEBLOCKS_DROP1 ), IMAGE_BITMAP, 0, 0, LR_SHARED);
+			hGameareaWater	= (HBITMAP)LoadImage(hCurrentInstance, MAKEINTRESOURCE(IDB_GAMEBLOCKS_WATER ), IMAGE_BITMAP, 0, 0, LR_SHARED);
+			hGameareaTrees	= (HBITMAP)LoadImage(hCurrentInstance, MAKEINTRESOURCE(IDB_GAMEBLOCKS_TREES ), IMAGE_BITMAP, 0, 0, LR_SHARED);
+			hGameareaDrone	= (HBITMAP)LoadImage(hCurrentInstance, MAKEINTRESOURCE(IDB_GAMEBLOCKS_DRONE ), IMAGE_BITMAP, 0, 0, LR_SHARED);
+			
 
 			// Status sitebar
 			hChildTitle = CreateWindow(_T("STATIC"), _T("Drony 2016"), WS_VISIBLE | WS_CHILD, 430, 30, 200, 50, hWnd, NULL, hCurrentInstance, NULL);
@@ -172,12 +175,13 @@ LRESULT CALLBACK GamewindowProc(HWND hWnd, UINT nMessage, WPARAM wParam, LPARAM 
 							{
 								case GAMEAREA_GRASS: SelectObject(hMemDC, hGameareaGrass); break;
 								default:
-								case GAMEAREA_STONE: SelectObject(hMemDC, hGameareaStone); break;
-								case GAMEAREA_HOME:  SelectObject(hMemDC, hGameareaHome);  break;
-								case GAMEAREA_DROP0: SelectObject(hMemDC, hGameareaDrop0); break;
-								case GAMEAREA_DROP1: SelectObject(hMemDC, hGameareaDrop1); break;
-								case GAMEAREA_WATER: SelectObject(hMemDC, hGameareaWater); break;
-								case GAMEAREA_TREES: SelectObject(hMemDC, hGameareaTrees); break;
+								case GAMEAREA_STONE:	SelectObject(hMemDC, hGameareaStone); break;
+								case GAMEAREA_HOME:		SelectObject(hMemDC, hGameareaHome);  break;
+								case GAMEAREA_DROP0:	SelectObject(hMemDC, hGameareaDrop0); break;
+								case GAMEAREA_DROP1:	SelectObject(hMemDC, hGameareaDrop1); break;
+								case GAMEAREA_WATER:	SelectObject(hMemDC, hGameareaWater); break;
+								case GAMEAREA_TREES:	SelectObject(hMemDC, hGameareaTrees); break;
+								case GAMEAREA_ENERGY:	SelectObject(hMemDC, hGameareaEnergy); break;
 							};
 						};
 						BitBlt(hDC, (12 + x) * GAMEAREA_BLOCKSIZE, (12 + y) * GAMEAREA_BLOCKSIZE, GAMEAREA_BLOCKSIZE, GAMEAREA_BLOCKSIZE, hMemDC, 0, 0, SRCCOPY);
@@ -375,14 +379,10 @@ void UpdateGamewindow()
  */
 BOOL CheckMove(UINT16 x, UINT16 y)
 {
-	/*if (pGamearea[FROM_2D_TO_1D(x, y)] == GAMEAREA_STONE)
-	{
-		return FALSE;
-	}
-	*/
+	//if (pGamearea[FROM_2D_TO_1D(x, y)] == GAMEAREA_ENERGY) EnergyTargetRule();
 	UNREFERENCED_PARAMETER(x); //onderdrukt compiler-foutmeldingen, omdat deze variabelen nu nog niet gebruikt worden
 	UNREFERENCED_PARAMETER(y);
-	
+	UpdateWindowAfterVisit();
 	return TRUE;
 }
 
@@ -424,6 +424,10 @@ BOOL CheckMove(UINT16 x, UINT16 y)
 		case GAMEAREA_STONE:
 			RockCrashRule();
 			break; 
+
+		case GAMEAREA_ENERGY:
+			EnergyTargetRule();
+			break;
 		};
 	};
 

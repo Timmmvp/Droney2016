@@ -18,6 +18,13 @@ void ResetTargetPoints()
 	}
 }
 
+void ResetEnergyTargetPoints()
+{
+	for (INT idy = 0; idy < nEnergyTargetCount; idy++)
+	{
+		pGamearea[FROM_2D_TO_1D(pEnergyTargetLoc[idy].x, pEnergyTargetLoc[idy].y)] = GAMEAREA_ENERGY;
+	}
+}
 /**
  * Message handler for the main dialog
  * @param hDlg					Dialog identifier
@@ -79,6 +86,7 @@ INT_PTR CALLBACK MaindialogProc(HWND hDlg, UINT nMessage, WPARAM wParam, LPARAM 
 				// Init the 'new' game
 				oDroneLoc = oHomeLoc;
 				nTargetsFound = 0;			// gamescore reset
+				nEnergyTargetsFound = 0;
 				nGameTimer = nTargetCount * 30;
 
 				// Switch the game on

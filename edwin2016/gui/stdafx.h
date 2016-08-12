@@ -27,6 +27,7 @@
 #define GAMEAREA_DROP1					'$'
 #define GAMEAREA_WATER					'~'
 #define GAMEAREA_TREES					'*'
+#define GAMEAREA_ENERGY					'E'
 #define GAMEMODE_MENU					0
 #define GAMEMODE_GAME					1
 #define GAMEMODE_PAUZE					2
@@ -47,7 +48,10 @@ extern LOCATION oDroneLoc;				// current drone location on the map
 extern LOCATION oHomeLoc;				// homebase location on the map
 extern UINT16 nTargetCount;				// number of targets in the area
 extern UINT16 nTargetsFound;			// number of targets found
+extern UINT16 nEnergyTargetCount;		// number of energy targets in the area
+extern UINT16 nEnergyTargetsFound;		// number of energy targets found
 extern LOCATION* pTargetLoc;			// target locations
+extern LOCATION* pEnergyTargetLoc;		// energy target locations
 extern BYTE nGameMode;					// modi of the game: 0 = maindialog, 1 = game, 2 = pauze
 extern UINT16 nGameTimer;				// running timer
 

@@ -4,6 +4,7 @@
 
 
 #define DELAY		15
+#define BONUS		10
 
 void WarningSound()
 {
@@ -57,3 +58,8 @@ void RockCrashRule()
 	
 }
 
+void EnergyTargetRule()
+{
+	nGameTimer += BONUS;
+	pGamearea[FROM_2D_TO_1D(oDroneLoc.x, oDroneLoc.y)] = GAMEAREA_GRASS;
+}
