@@ -30,6 +30,9 @@ void MarkTargetFoundRule()
 
 void DroneAtHomeRule()
 {
+	Beep(2000, 50);
+	Beep(1500, 50);
+	Beep(2000, 50);
 	nGameMode = GAMEMODE_MENU;
 	
 	// Show the score dialog
@@ -61,5 +64,6 @@ void RockCrashRule()
 void EnergyTargetRule()
 {
 	nGameTimer += BONUS;
+	Beep(2000, 50);
 	pGamearea[FROM_2D_TO_1D(oDroneLoc.x, oDroneLoc.y)] = GAMEAREA_GRASS;
 }
