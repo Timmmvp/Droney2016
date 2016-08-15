@@ -5,6 +5,18 @@
 #include "stdafx.h"
 #include "scoredialog.h"
 
+
+void CompareHighscore(HWND hDlg)
+{
+	if (nGameTimer > nHighscoreTime)
+	{
+		//wmemset(pHighscoreName, '\0', HIGHSCORE_NAME_SIZE);
+		HWND hPlayerName = GetDlgItem(hDlg, IDC_EDIT1);
+		GetWindowText(hPlayerName, pHighscoreName, HIGHSCORE_NAME_SIZE);
+
+		nHighscoreTime = nGameTimer;
+	}
+}
 // Global variables
 
 // Local variables
@@ -66,6 +78,8 @@ INT_PTR CALLBACK ScoredialogProc(HWND hDlg, UINT nMessage, WPARAM wParam, LPARAM
 
 			if (nId == IDOK || nId == IDCANCEL)
 			{
+				CompareHighscore(hDlg);
+				
 				EndDialog(hDlg, nId);
 
 				return (INT_PTR)TRUE;

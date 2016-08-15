@@ -32,6 +32,8 @@
 #define GAMEMODE_GAME					1
 #define GAMEMODE_PAUZE					2
 
+#define HIGHSCORE_NAME_SIZE				32
+
 // Types
 struct LOCATION
 {
@@ -40,20 +42,22 @@ struct LOCATION
 };
 
 // Global variables
-extern HINSTANCE hCurrentInstance;		// current instance
-extern HWND hGamewindowWnd;				// the gamewindow
-extern BYTE* pGamearea;					// the gamearea
-extern UINT16 nGameareaW, nGameareaH;	// gamearea width and height
-extern LOCATION oDroneLoc;				// current drone location on the map
-extern LOCATION oHomeLoc;				// homebase location on the map
-extern UINT16 nTargetCount;				// number of targets in the area
-extern UINT16 nTargetsFound;			// number of targets found
-extern UINT16 nEnergyCount;				// number of energy targets in the area
-extern UINT16 nEnergyFound;		// number of energy targets found
-extern LOCATION* pTargetLoc;			// target locations
-extern LOCATION* pEnergyTargetLoc;		// energy target locations
-extern BYTE nGameMode;					// modi of the game: 0 = maindialog, 1 = game, 2 = pauze
-extern UINT16 nGameTimer;				// running timer
+extern HINSTANCE hCurrentInstance;							// current instance
+extern HWND hGamewindowWnd;									// the gamewindow
+extern BYTE* pGamearea;										// the gamearea
+extern UINT16 nGameareaW, nGameareaH;						// gamearea width and height
+extern LOCATION oDroneLoc;									// current drone location on the map
+extern LOCATION oHomeLoc;									// homebase location on the map
+extern UINT16 nTargetCount;									// number of targets in the area
+extern UINT16 nTargetsFound;								// number of targets found
+extern UINT16 nEnergyCount;									// number of energy targets in the area
+extern UINT16 nEnergyFound;									// number of energy targets found
+extern LOCATION* pTargetLoc;								// target locations
+extern LOCATION* pEnergyTargetLoc;							// energy target locations
+extern BYTE nGameMode;										// modi of the game: 0 = maindialog, 1 = game, 2 = pauze
+extern UINT16 nGameTimer;									// running timer
+extern WCHAR pHighscoreName [];								// Name of player with highscore
+extern UINT16 nHighscoreTime;								// Highscore time
 
 #define FROM_2D_TO_1D(x,y)				((y * nGameareaW) + x)
 

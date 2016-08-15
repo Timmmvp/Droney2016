@@ -39,6 +39,9 @@
     <ClCompile Include="gui\crashdialog.cpp">
       <Filter>gui files</Filter>
     </ClCompile>
+    <ClCompile Include="gui\timedialog.cpp">
+      <Filter>gui files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gui\stdafx.h">
@@ -66,6 +69,9 @@
       <Filter>gui files</Filter>
     </ClInclude>
     <ClInclude Include="gui\crashdialog.h">
+      <Filter>gui files</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\timedialog.h">
       <Filter>gui files</Filter>
     </ClInclude>
   </ItemGroup>

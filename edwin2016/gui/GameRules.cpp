@@ -43,7 +43,7 @@ void DroneAtHomeRule()
 	
 	// Show the score dialog
 	DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_SCOREDIALOG), hGamewindowWnd, (DLGPROC)ScoredialogProc);
-
+	SetHighscore();
 	// Show the main dialog
 	DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_MAINDIALOG), hGamewindowWnd, (DLGPROC)MaindialogProc);
 }

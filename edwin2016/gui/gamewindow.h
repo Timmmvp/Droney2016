@@ -52,4 +52,5 @@ BOOL CheckMove(UINT16 x, UINT16 y);
  * Apply the sign on the current drone location
  */
 void ApplyLocation();
+void SetHighscore();
 

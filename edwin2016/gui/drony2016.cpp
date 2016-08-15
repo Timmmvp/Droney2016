@@ -5,21 +5,24 @@
 #include "stdafx.h"
 #include "drony2016.h"
 
+
 // Global variables
-HINSTANCE hCurrentInstance;		// current instance
-HWND hGamewindowWnd;			// the gamewindow
-BYTE* pGamearea;				// the gamearea
-UINT16 nGameareaW, nGameareaH;	// gamearea width and height
-LOCATION oDroneLoc;				// current drone location on the map
-LOCATION oHomeLoc;				// homebase location on the map
-UINT16 nTargetCount;			// number of targets in the area
-UINT16 nTargetsFound;			// number of targets found
-UINT16 nEnergyCount;			// number of energy targets in the area
-UINT16 nEnergyFound;		// number of energy targets found
-LOCATION* pTargetLoc;			// target locations
-LOCATION* pEnergyTargetLoc;		// energy target locations
-BYTE nGameMode;					// modi of the game: 0 = maindialog, 1 = game, 2 = pauze
-UINT16 nGameTimer;				// running timer
+HINSTANCE hCurrentInstance;							// current instance
+HWND hGamewindowWnd;								// the gamewindow
+BYTE* pGamearea;									// the gamearea
+UINT16 nGameareaW, nGameareaH;						// gamearea width and height
+LOCATION oDroneLoc;									// current drone location on the map
+LOCATION oHomeLoc;									// homebase location on the map
+UINT16 nTargetCount;								// number of targets in the area
+UINT16 nTargetsFound;								// number of targets found
+UINT16 nEnergyCount;								// number of energy targets in the area
+UINT16 nEnergyFound;								// number of energy targets found
+LOCATION* pTargetLoc;								// target locations
+LOCATION* pEnergyTargetLoc;							// energy target locations
+BYTE nGameMode;										// modi of the game: 0 = maindialog, 1 = game, 2 = pauze
+UINT16 nGameTimer;									// running timer
+WCHAR pHighscoreName [HIGHSCORE_NAME_SIZE] = {0};	// Name of player with highscore
+UINT16 nHighscoreTime = 0;							// Highscore time
 
 /**
  * The Windows main() method

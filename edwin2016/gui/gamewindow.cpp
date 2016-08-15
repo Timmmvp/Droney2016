@@ -125,8 +125,8 @@ LRESULT CALLBACK GamewindowProc(HWND hWnd, UINT nMessage, WPARAM wParam, LPARAM 
 			SendMessage(hChildTargets, WM_SETFONT, WPARAM(hFont), TRUE);
 			SendMessage(hChildHighscore, WM_SETFONT, WPARAM(hFont), TRUE);
 
-			hChildHighscoreTime = CreateWindow(_T("STATIC"), _T("10:00"), WS_VISIBLE | WS_CHILD, 440, 270, 100, 20, hWnd, NULL, hCurrentInstance, NULL);
-			hChildHighscoreName = CreateWindow(_T("STATIC"), _T("Edwin"), WS_VISIBLE | WS_CHILD, 440, 290, 100, 20, hWnd, NULL, hCurrentInstance, NULL);
+			hChildHighscoreTime = CreateWindow(_T("STATIC"), _T("00:00"), WS_VISIBLE | WS_CHILD, 440, 270, 100, 20, hWnd, NULL, hCurrentInstance, NULL);
+			hChildHighscoreName = CreateWindow(_T("STATIC"), _T("Tim"), WS_VISIBLE | WS_CHILD, 440, 290, 100, 20, hWnd, NULL, hCurrentInstance, NULL);
 			hFont = CreateFont(15, 0, 0, 0, FW_NORMAL, FALSE, FALSE, FALSE, ANSI_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, DEFAULT_QUALITY, DEFAULT_PITCH | FF_SWISS, L"Arial");
 			SendMessage(hChildHighscoreTime, WM_SETFONT, WPARAM(hFont), TRUE);
 			SendMessage(hChildHighscoreName, WM_SETFONT, WPARAM(hFont), TRUE);
@@ -362,6 +362,16 @@ void SetTargetCount()
 	SetWindowText(hChildTargets, sText);
 };
 
+void SetHighscore()
+{
+	SetWindowText(hChildHighscoreName, _T("                                     "));
+	SetWindowText(hChildHighscoreName, pHighscoreName);
+
+	WCHAR sText[250];
+	wsprintf(sText, _T("%02d:%02d"), nHighscoreTime / 60, nHighscoreTime % 60);
+	SetWindowText(hChildHighscoreTime, sText);
+}
+
 /**
  * Update the gamewindow
  */
@@ -378,7 +388,6 @@ void UpdateGamewindow()
  */
 BOOL CheckMove(UINT16 x, UINT16 y)
 {
-	//if (pGamearea[FROM_2D_TO_1D(x, y)] == GAMEAREA_ENERGY) EnergyTargetRule();
 	UNREFERENCED_PARAMETER(x); //onderdrukt compiler-foutmeldingen, omdat deze variabelen nu nog niet gebruikt worden
 	UNREFERENCED_PARAMETER(y);
 	UpdateWindowAfterVisit();

@@ -1,5 +1,5 @@
 /**
- * The new high score dialog
+ * The crash dialog
  */
 
 // Include often but read only once
