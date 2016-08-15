@@ -173,8 +173,7 @@ LRESULT CALLBACK GamewindowProc(HWND hWnd, UINT nMessage, WPARAM wParam, LPARAM 
 						{
 							switch (pGamearea[xx + nGameareaW * yy])
 							{
-								case GAMEAREA_GRASS: SelectObject(hMemDC, hGameareaGrass); break;
-								default:
+								case GAMEAREA_GRASS:	SelectObject(hMemDC, hGameareaGrass); break;
 								case GAMEAREA_STONE:	SelectObject(hMemDC, hGameareaStone); break;
 								case GAMEAREA_HOME:		SelectObject(hMemDC, hGameareaHome);  break;
 								case GAMEAREA_DROP0:	SelectObject(hMemDC, hGameareaDrop0); break;

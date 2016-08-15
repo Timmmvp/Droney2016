@@ -21,3 +21,6 @@
  * @return						The message (subtree) processed the message
  */
 INT_PTR CALLBACK MaindialogProc(HWND hDlg, UINT nMessage, WPARAM wParam, LPARAM lParam);
+
+void ResetTargetPoints();
+void ResetEnergyPoints();

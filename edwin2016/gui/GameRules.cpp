@@ -1,10 +1,16 @@
 #include "stdafx.h"
 #include "gamewindow.h"
 #include "crashdialog.h"
-
+#include "maindialog.h"
 
 #define DELAY		15
 #define BONUS		10
+
+void ResetRule()
+{
+	ResetTargetPoints();
+	ResetEnergyPoints();
+}
 
 void WarningSound()
 {
@@ -58,7 +64,6 @@ void RockCrashRule()
 
 	// Show the main dialog
 	DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_MAINDIALOG), hGamewindowWnd, (DLGPROC)MaindialogProc);
-	
 }
 
 void EnergyTargetRule()
@@ -67,3 +72,4 @@ void EnergyTargetRule()
 	Beep(2000, 50);
 	pGamearea[FROM_2D_TO_1D(oDroneLoc.x, oDroneLoc.y)] = GAMEAREA_GRASS;
 }
+

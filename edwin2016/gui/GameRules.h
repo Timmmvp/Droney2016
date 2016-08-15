@@ -4,3 +4,4 @@ void DroneAtHomeRule();
 void DelayOnTreeHitRule();
 void RockCrashRule();
 void EnergyTargetRule();
+void ResetRule();

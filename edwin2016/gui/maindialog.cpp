@@ -4,6 +4,7 @@
 
 #include "stdafx.h"
 #include "maindialog.h"
+#include "GameRules.h"
 
 
 // Global variables
@@ -18,9 +19,9 @@ void ResetTargetPoints()
 	}
 }
 
-void ResetEnergyTargetPoints()
+void ResetEnergyPoints()
 {
-	for (INT idy = 0; idy < nEnergyTargetCount; idy++)
+	for (INT idy = 0; idy < nEnergyCount; idy++)
 	{
 		pGamearea[FROM_2D_TO_1D(pEnergyTargetLoc[idy].x, pEnergyTargetLoc[idy].y)] = GAMEAREA_ENERGY;
 	}
@@ -86,11 +87,11 @@ INT_PTR CALLBACK MaindialogProc(HWND hDlg, UINT nMessage, WPARAM wParam, LPARAM 
 				// Init the 'new' game
 				oDroneLoc = oHomeLoc;
 				nTargetsFound = 0;			// gamescore reset
-				nEnergyTargetsFound = 0;
+				nEnergyFound = 0;
 				nGameTimer = nTargetCount * 30;
 
 				// Switch the game on
-				ResetTargetPoints();
+				ResetRule();
 				UpdateGamewindow();
 				SetTargetCount();
 				nGameMode = GAMEMODE_GAME;

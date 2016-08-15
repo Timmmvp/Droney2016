@@ -14,8 +14,8 @@ LOCATION oDroneLoc;				// current drone location on the map
 LOCATION oHomeLoc;				// homebase location on the map
 UINT16 nTargetCount;			// number of targets in the area
 UINT16 nTargetsFound;			// number of targets found
-UINT16 nEnergyTargetCount;		// number of energy targets in the area
-UINT16 nEnergyTargetsFound;		// number of energy targets found
+UINT16 nEnergyCount;			// number of energy targets in the area
+UINT16 nEnergyFound;		// number of energy targets found
 LOCATION* pTargetLoc;			// target locations
 LOCATION* pEnergyTargetLoc;		// energy target locations
 BYTE nGameMode;					// modi of the game: 0 = maindialog, 1 = game, 2 = pauze
@@ -81,7 +81,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
 
 			if (pGamearea[FROM_2D_TO_1D(x, y)] == GAMEAREA_ENERGY)
 			{
-				nEnergyTargetCount++;
+				nEnergyCount++;
 			};
 		};
 
@@ -109,17 +109,17 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
 			};
 		};
 
-	pEnergyTargetLoc = (LOCATION*)malloc(sizeof(LOCATION) * nEnergyTargetCount);
-	nEnergyTargetCount = 0;
+	pEnergyTargetLoc = (LOCATION*)malloc(sizeof(LOCATION) * nEnergyCount);
+	nEnergyCount = 0;
 	for (y = 0; y < nGameareaH; y++)
 		for (x = 0; x < nGameareaW; x++)
 		{
 			// Position is target?
 			if (pGamearea[FROM_2D_TO_1D(x, y)] == GAMEAREA_ENERGY)
 			{
-				pEnergyTargetLoc[nEnergyTargetCount].x = x;
-				pEnergyTargetLoc[nEnergyTargetCount].y = y;
-				nEnergyTargetCount++;
+				pEnergyTargetLoc[nEnergyCount].x = x;
+				pEnergyTargetLoc[nEnergyCount].y = y;
+				nEnergyCount++;
 			};
 		};
 

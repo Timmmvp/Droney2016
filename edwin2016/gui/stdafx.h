@@ -48,8 +48,8 @@ extern LOCATION oDroneLoc;				// current drone location on the map
 extern LOCATION oHomeLoc;				// homebase location on the map
 extern UINT16 nTargetCount;				// number of targets in the area
 extern UINT16 nTargetsFound;			// number of targets found
-extern UINT16 nEnergyTargetCount;		// number of energy targets in the area
-extern UINT16 nEnergyTargetsFound;		// number of energy targets found
+extern UINT16 nEnergyCount;				// number of energy targets in the area
+extern UINT16 nEnergyFound;		// number of energy targets found
 extern LOCATION* pTargetLoc;			// target locations
 extern LOCATION* pEnergyTargetLoc;		// energy target locations
 extern BYTE nGameMode;					// modi of the game: 0 = maindialog, 1 = game, 2 = pauze
