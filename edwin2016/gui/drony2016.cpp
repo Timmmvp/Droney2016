@@ -70,7 +70,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
 		for (x = 0; x < nGameareaW; x++)
 		{
 			// Position is homebase?
-			if (!bHomeFound && pGamearea[x + nGameareaW * y] == GAMEAREA_HOME)
+			if (!bHomeFound && pGamearea[FROM_2D_TO_1D(x,y)] == GAMEAREA_HOME)
 			{
 				bHomeFound = TRUE;
 				oHomeLoc.x = x; oHomeLoc.y = y;

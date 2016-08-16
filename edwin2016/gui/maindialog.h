@@ -22,5 +22,12 @@
  */
 INT_PTR CALLBACK MaindialogProc(HWND hDlg, UINT nMessage, WPARAM wParam, LPARAM lParam);
 
+/**
+* Reset all targets from 'visited' to 'to visit'
+*/
 void ResetTargetPoints();
+
+/**
+* Reset al the energypoints from 'visited' to 'to visit'
+*/
 void ResetEnergyPoints();

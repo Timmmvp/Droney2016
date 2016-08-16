@@ -7,6 +7,7 @@
 
 // Defines
 #define IDT_GAMETIMER			1
+#define FROM_2D_TO_1D(x,y)		((y * nGameareaW) + x)
 
 // Global variables
 
@@ -52,5 +53,23 @@ BOOL CheckMove(UINT16 x, UINT16 y);
  * Apply the sign on the current drone location
  */
 void ApplyLocation();
+
+/**
+* Update the highscore
+*/
 void SetHighscore();
 
+/**
+* Update the targetcount
+*/
+void SetTargetCount();
+
+/**
+* Update the gamewindow after visit by drone
+*/
+void UpdateWindowAfterVisit();
+
+/**
+* Update the Gamewindow
+*/
+void UpdateGamewindow();

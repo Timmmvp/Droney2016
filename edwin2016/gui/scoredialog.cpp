@@ -3,6 +3,7 @@
  */
 
 #include "stdafx.h"
+#include "drony2016.h"
 #include "scoredialog.h"
 
 

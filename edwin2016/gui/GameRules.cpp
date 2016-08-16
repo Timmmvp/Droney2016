@@ -1,7 +1,9 @@
 #include "stdafx.h"
+#include "drony2016.h"
 #include "gamewindow.h"
 #include "crashdialog.h"
 #include "maindialog.h"
+#include "timedialog.h"
 
 #define DELAY		15
 #define BONUS		10
@@ -48,8 +50,22 @@ void DroneAtHomeRule()
 	DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_MAINDIALOG), hGamewindowWnd, (DLGPROC)MaindialogProc);
 }
 
+void OutOfTimeRule()
+{
+	// Show the score dialog
+	DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_TIMEDIALOG), hGamewindowWnd, (DLGPROC)TimedialogProc);
+	SetHighscore();
+	// Show the main dialog
+	DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_MAINDIALOG), hGamewindowWnd, (DLGPROC)MaindialogProc);
+}
+
 void DelayOnTreeHitRule()
 {
+	if (nGameTimer <= DELAY)
+	{
+		OutOfTimeRule();
+
+	}
 	nGameTimer -= DELAY;
 	WarningSound();
 }

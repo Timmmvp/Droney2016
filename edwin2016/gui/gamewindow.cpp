@@ -3,6 +3,7 @@
 */
 
 #include "stdafx.h"
+#include "drony2016.h"
 #include "gamewindow.h"
 #include "GameRules.h"
 
@@ -171,7 +172,7 @@ LRESULT CALLBACK GamewindowProc(HWND hWnd, UINT nMessage, WPARAM wParam, LPARAM 
 						}
 						else
 						{
-							switch (pGamearea[xx + nGameareaW * yy])
+							switch (pGamearea[FROM_2D_TO_1D(xx, yy)])
 							{
 								case GAMEAREA_GRASS:	SelectObject(hMemDC, hGameareaGrass); break;
 								case GAMEAREA_STONE:	SelectObject(hMemDC, hGameareaStone); break;
@@ -272,8 +273,16 @@ LRESULT CALLBACK GamewindowProc(HWND hWnd, UINT nMessage, WPARAM wParam, LPARAM 
 					if (nGameMode == GAMEMODE_GAME)
 					{
 						nGameTimer--;
-						wsprintf(sText, _T("Time: %02d:%02d"), nGameTimer / 60, nGameTimer % 60);
-						SetWindowText(hChildTime, sText);
+						if (nGameTimer <= 0)
+						{
+							OutOfTimeRule();
+						}
+
+						else
+						{
+							wsprintf(sText, _T("Time: %02d:%02d"), nGameTimer / 60, nGameTimer % 60);
+							SetWindowText(hChildTime, sText);
+						}
 					};
 
 					break;
@@ -356,8 +365,6 @@ LRESULT CALLBACK GamewindowProc(HWND hWnd, UINT nMessage, WPARAM wParam, LPARAM 
 void SetTargetCount()
 {
 	WCHAR sText[250];	// text buffer
-	//if (pGamearea[FROM_2D_TO_1D(oDroneLoc.x, oDroneLoc.y)] == GAMEAREA_DROP0) GAMEAREA_DROP0 = GAMEAREA_DROP1 && nTargetsFound++;
-	// Update the content
 	wsprintf(sText, _T("Targets: %d / %d"), nTargetsFound, nTargetCount);
 	SetWindowText(hChildTargets, sText);
 };

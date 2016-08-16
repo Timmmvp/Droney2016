@@ -1,0 +1,28 @@
+extra toevoegingen
+
+tijd loopt af. 
+er is voor gezorgd dat de tijd afloopt in plaats van oploopt. Om te bepalen hoeveel tijd er is wordt er gekeken naar het aantal targets op de map. De tijd is het aantal targets * 30 seconden.
+op moment dat de tijd om is wordt er een dialog aangeroepen die aangeeft dat de tijd om is. 
+
+Crashdialog gemaakt. 
+Op moment dat de gebruiker tegen een rots op botst wordt er een dialog geopend met daarin de mededeling dat de gebruiker is gecrashed. Hierna begint het spel weer opnieuw. 
+
+tijdspakketjes
+Als extra functie is ervoor gekozen om tijdpakketjes te maken. Deze tijdspakketjes zijn te herkennen aan hun afwijkende groene kleur met daarin een gele bliksemschicht. als je over dit vakje heen gaat krijg je 10 bonus seconden waarna dit vakje weer verdwijnt. 
+als het spel weer opnieuw begint worden de vakjes weer op hun oude plek terug gezet. 
+
+beep
+bij het raken van een boom is een geluidje toegevoegd. dit omdat er dan duidelijk wordt dat er iets 'aparts' gebeurd. Zo gebeurd dit ook als er een target wordt opgepikt en als de gebruiker na het oppikken van alle targets weer op de thuisbasis terecht komt. 
+
+gamerules file aangemaakt. 
+Alle 'regels' staan nu in een aparte Gamerules file. dit om het overzicht in het programma te bewaren op moment dat de regels goed gescheiden zijn van de rest van de code wordt het overzichterlijker wat er wanneer gebeurd. 
+Zo kan bijvoorbeeld bij het raken van een boom een regel aangeroepen worden die 15 seconden tijdstraf aan de gebruiker toekent.
+
+Highscore
+
+Op moment dat de gebruiker een nieuwe highscore behaald heeft wordt er een window geopen waar de gebruiker zijn/haar naam in kan vullen. als hij/zij dit gedaan heeft wordt de highscore getoond in het scherm met de tijd en naam van de gebruiker. 
+Omdat de naam van de gebruiker kan verschillen in lengte wordt het naam venster voordat het wordt gevuld met de naam van de gebruiker eerst gevuld met alleen maar spaties. dit omdat er een nieuw dialog over het oude dialog heen getekend wordt. 
+als de naam dus korter is dan de eerder ingevoerde naam zal er in een ander geval nog een deel van de oude naam te zien zijn.
+
+code verfraaid.
+om het overzicht in de code te bewaren zijn functies verplaatst naar de headerfiles waar deze bij horen. dit om zo min mogelijk informatie tussen de bestanden uit te hoeven wisselen.
