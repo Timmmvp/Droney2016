@@ -397,7 +397,7 @@ BOOL CheckMove(UINT16 x, UINT16 y)
 {
 	UNREFERENCED_PARAMETER(x); //onderdrukt compiler-foutmeldingen, omdat deze variabelen nu nog niet gebruikt worden
 	UNREFERENCED_PARAMETER(y);
-	UpdateWindowAfterVisit();
+	//UpdateWindowAfterVisit();
 	return TRUE;
 }
 
