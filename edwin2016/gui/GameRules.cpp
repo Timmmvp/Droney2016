@@ -4,6 +4,7 @@
 #include "crashdialog.h"
 #include "maindialog.h"
 #include "timedialog.h"
+#include "EOGdialog.h"
 
 #define DELAY		15
 #define BONUS		10
@@ -42,21 +43,32 @@ void DroneAtHomeRule()
 	Beep(1500, 50);
 	Beep(2000, 50);
 	nGameMode = GAMEMODE_MENU;
-	
-	// Show the score dialog
-	DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_SCOREDIALOG), hGamewindowWnd, (DLGPROC)ScoredialogProc);
-	SetHighscore();
-	// Show the main dialog
-	DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_MAINDIALOG), hGamewindowWnd, (DLGPROC)MaindialogProc);
+	if (nGameTimer < nHighscoreTime)
+	{
+		// Show the end of game dialog
+		DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_EOGDIALOG), hGamewindowWnd, (DLGPROC)TimedialogProc);
+		SetHighscore();
+		// Show the main dialog
+		DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_MAINDIALOG), hGamewindowWnd, (DLGPROC)MaindialogProc);
+	}
+
+	else
+	{
+		// Show the score dialog
+		DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_SCOREDIALOG), hGamewindowWnd, (DLGPROC)ScoredialogProc);
+		SetHighscore();
+		// Show the main dialog
+		DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_MAINDIALOG), hGamewindowWnd, (DLGPROC)MaindialogProc);
+	}
 }
 
 void OutOfTimeRule()
 {
-	// Show the score dialog
-	DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_TIMEDIALOG), hGamewindowWnd, (DLGPROC)TimedialogProc);
-	SetHighscore();
-	// Show the main dialog
-	DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_MAINDIALOG), hGamewindowWnd, (DLGPROC)MaindialogProc);
+		// Show the score dialog
+		DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_TIMEDIALOG), hGamewindowWnd, (DLGPROC)TimedialogProc);
+		SetHighscore();
+		// Show the main dialog
+		DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_MAINDIALOG), hGamewindowWnd, (DLGPROC)MaindialogProc);
 }
 
 void DelayOnTreeHitRule()

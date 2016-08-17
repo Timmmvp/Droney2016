@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="gui\crashdialog.cpp" />
     <ClCompile Include="gui\drony2016.cpp" />
+    <ClCompile Include="gui\EOGDialog.cpp" />
     <ClCompile Include="gui\GameRules.cpp" />
     <ClCompile Include="gui\gamewindow.cpp" />
     <ClCompile Include="gui\maindialog.cpp" />
@@ -32,6 +33,7 @@
   <ItemGroup>
     <ClInclude Include="gui\crashdialog.h" />
     <ClInclude Include="gui\drony2016.h" />
+    <ClInclude Include="gui\EOGdialog.h" />
     <ClInclude Include="gui\GameRules.h" />
     <ClInclude Include="gui\gamewindow.h" />
     <ClInclude Include="gui\maindialog.h" />
