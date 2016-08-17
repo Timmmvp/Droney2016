@@ -7,26 +7,6 @@
 #include "maindialog.h"
 #include "GameRules.h"
 
-
-// Global variables
-
-// Local variables
-
-void ResetTargetPoints()
-{
-	for (INT idx = 0; idx < nTargetCount; idx++)
-	{
-		pGamearea[FROM_2D_TO_1D(pTargetLoc[idx].x, pTargetLoc[idx].y)] = GAMEAREA_DROP0;
-	}
-}
-
-void ResetEnergyPoints()
-{
-	for (INT idy = 0; idy < nEnergyCount; idy++)
-	{
-		pGamearea[FROM_2D_TO_1D(pEnergyTargetLoc[idy].x, pEnergyTargetLoc[idy].y)] = GAMEAREA_ENERGY;
-	}
-}
 /**
  * Message handler for the main dialog
  * @param hDlg					Dialog identifier

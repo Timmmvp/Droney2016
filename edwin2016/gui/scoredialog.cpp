@@ -6,7 +6,9 @@
 #include "drony2016.h"
 #include "scoredialog.h"
 
-
+/**
+* Compares the current time with the best time so far, then print player name and set HighscoreTime
+*/
 void CompareHighscore(HWND hDlg)
 {
 	if (nGameTimer > nHighscoreTime)

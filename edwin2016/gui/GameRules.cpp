@@ -89,3 +89,24 @@ void EnergyTargetRule()
 	pGamearea[FROM_2D_TO_1D(oDroneLoc.x, oDroneLoc.y)] = GAMEAREA_GRASS;
 }
 
+/**
+*Reset all targetpoints found by scanning the map
+*/
+
+void ResetTargetPoints()
+{
+	for (INT idx = 0; idx < nTargetCount; idx++)
+	{
+		pGamearea[FROM_2D_TO_1D(pTargetLoc[idx].x, pTargetLoc[idx].y)] = GAMEAREA_DROP0;
+	}
+}
+/**
+*Reset all energypoints found by scanning the map
+*/
+void ResetEnergyPoints()
+{
+	for (INT idy = 0; idy < nEnergyCount; idy++)
+	{
+		pGamearea[FROM_2D_TO_1D(pEnergyTargetLoc[idy].x, pEnergyTargetLoc[idy].y)] = GAMEAREA_ENERGY;
+	}
+}

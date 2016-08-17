@@ -280,7 +280,7 @@ LRESULT CALLBACK GamewindowProc(HWND hWnd, UINT nMessage, WPARAM wParam, LPARAM 
 
 						else
 						{
-							wsprintf(sText, _T("Time: %02d:%02d"), nGameTimer / 60, nGameTimer % 60);
+							wsprintf(sText, _T("Time: %02d:%02d"), TIME_MINUTES, TIME_SECONDS);
 							SetWindowText(hChildTime, sText);
 						}
 					};
@@ -368,7 +368,9 @@ void SetTargetCount()
 	wsprintf(sText, _T("Targets: %d / %d"), nTargetsFound, nTargetCount);
 	SetWindowText(hChildTargets, sText);
 };
-
+/**
+* Update the the highscore
+*/
 void SetHighscore()
 {
 	SetWindowText(hChildHighscoreName, _T("                                     "));
@@ -446,6 +448,9 @@ BOOL CheckMove(UINT16 x, UINT16 y)
 		};
 	};
 
+	/**
+	* combines three functions used when updating the window
+	*/
 	void UpdateWindowAfterVisit()
 	{
 		UpdateGamewindow();
