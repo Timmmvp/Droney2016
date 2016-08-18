@@ -70,8 +70,8 @@ INT_PTR CALLBACK ScoredialogProc(HWND hDlg, UINT nMessage, WPARAM wParam, LPARAM
 				oParentRect.top + (oNewRect.bottom / 2),
 				0, 0,          // Ignores size arguments. 
 				SWP_NOSIZE);
-
-			return (INT_PTR)TRUE;
+			SetFocus(GetDlgItem(hDlg, IDC_EDIT1));
+			return (INT_PTR)FALSE;
 		};
 
 		// Catch the commands
