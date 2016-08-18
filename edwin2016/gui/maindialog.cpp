@@ -72,9 +72,9 @@ INT_PTR CALLBACK MaindialogProc(HWND hDlg, UINT nMessage, WPARAM wParam, LPARAM 
 				nGameTimer = nTargetCount * 30;
 
 				// Switch the game on
-				ResetRule();
 				UpdateGamewindow();
 				SetTargetCount();
+				ResetRule();
 				nGameMode = GAMEMODE_GAME;
 
 				// Close the dialog

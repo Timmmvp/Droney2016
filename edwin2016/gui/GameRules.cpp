@@ -64,6 +64,7 @@ void DroneAtHomeRule()
 
 void OutOfTimeRule()
 {
+		nGameMode = GAMEMODE_MENU;
 		// Show the out of time dialog
 		DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_TIMEDIALOG), hGamewindowWnd, (DLGPROC)TimedialogProc);
 		SetHighscore();
@@ -78,8 +79,12 @@ void DelayOnTreeHitRule()
 		OutOfTimeRule();
 
 	}
-	nGameTimer -= DELAY;
-	WarningSound();
+	else
+	{
+		nGameTimer -= DELAY;
+		WarningSound();
+	}
+
 }
 
 void RockCrashRule()

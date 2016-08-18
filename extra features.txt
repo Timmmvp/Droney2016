@@ -26,3 +26,7 @@ als de naam dus korter is dan de eerder ingevoerde naam zal er in een ander geva
 
 code verfraaid.
 om het overzicht in de code te bewaren zijn functies verplaatst naar de headerfiles waar deze bij horen. dit om zo min mogelijk informatie tussen de bestanden uit te hoeven wisselen.
+Macro's gedefineerd om op die manier het overzicht te bewaren. 
+
+functie FORM_2D_TO_1D gemaakt een tweedimensionaal veld wordt omgezet naar een eendimencionaal array. om de locatie hiervan te bepalen worden er een x en een y coordinaat gezocht.
+om deze coordinaten te bepalen wordt er gebruikt gemaakt van de volgende berekening ((y * nGameareaW) + x) x en y zijn dan de coordinaten en nGameareaW is de breedte van het veld. 

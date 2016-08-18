@@ -378,8 +378,8 @@ void SetHighscore()
 
 	WCHAR sText[250];
 	wsprintf(sText, _T("%02d:%02d"), nHighscoreTime / 60, nHighscoreTime % 60);
-	SetWindowText(hChildHighscoreTime, _T("                                     "));
 	SetWindowText(hChildHighscoreTime, sText);
+	SetWindowText(hChildTime, _T("                                     "));
 }
 
 /**
