@@ -8,8 +8,8 @@
 // Defines
 #define IDT_GAMETIMER			1
 #define FROM_2D_TO_1D(x,y)		((y * nGameareaW) + x)
-#define TIME_MINUTES			nGameTimer/60
-#define TIME_SECONDS			nGameTimer%60
+#define MINUTES(x)			x / 60
+#define SECONDS(x)			x % 60
 
 // Global variables
 

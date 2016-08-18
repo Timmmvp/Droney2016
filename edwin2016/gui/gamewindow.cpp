@@ -280,7 +280,7 @@ LRESULT CALLBACK GamewindowProc(HWND hWnd, UINT nMessage, WPARAM wParam, LPARAM 
 
 						else
 						{
-							wsprintf(sText, _T("Time: %02d:%02d"), TIME_MINUTES, TIME_SECONDS);
+							wsprintf(sText, _T("Time: %02d:%02d"), MINUTES(nGameTimer), SECONDS(nGameTimer));
 							SetWindowText(hChildTime, sText);
 						}
 					};
@@ -378,6 +378,7 @@ void SetHighscore()
 
 	WCHAR sText[250];
 	wsprintf(sText, _T("%02d:%02d"), nHighscoreTime / 60, nHighscoreTime % 60);
+	SetWindowText(hChildHighscoreTime, _T("                                     "));
 	SetWindowText(hChildHighscoreTime, sText);
 }
 

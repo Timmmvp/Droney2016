@@ -64,7 +64,7 @@ void DroneAtHomeRule()
 
 void OutOfTimeRule()
 {
-		// Show the score dialog
+		// Show the out of time dialog
 		DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_TIMEDIALOG), hGamewindowWnd, (DLGPROC)TimedialogProc);
 		SetHighscore();
 		// Show the main dialog
