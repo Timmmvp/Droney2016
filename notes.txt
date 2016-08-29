@@ -1,9 +1,0 @@
-er moet een functie komen die de een @ omzet naar een $ in de mapp
-dus 
-er moet een int score aangemaakt worden deze kan dan opgehoogd worden op moment dat de drone op een dropzone is.
-het statement dat hiervoor gebruikt zou kunnen worden is:
-if (pGamearea[FROM_2d_TO_1D(x, y)] == GAMEAREA_DROP0) GAMEAREA_DROP0 = GAMEAREA_DROP1 && nTargetsFound ++;
-LET OP! Functie SetTargetCount();
-
-applylocation bevat een switch statement. hier word een berekening uitgevoerd en als de uitkomst gelijk is aan de bijbehorende
-case worden de 'opdrachten' die in de case staan uitgevoerd. 
