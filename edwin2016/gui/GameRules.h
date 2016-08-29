@@ -34,3 +34,8 @@ void ResetRule();
 * contains the rule which opens a dialog when the gamer is out of time
 */
 void OutOfTimeRule();
+
+/**
+* contains the rule which resets points, targets, time and places the drone on the homebase 
+*/
+void InitNewGameRule();

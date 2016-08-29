@@ -127,3 +127,13 @@ void ResetEnergyPoints()
 		pGamearea[FROM_2D_TO_1D(pEnergyTargetLoc[idy].x, pEnergyTargetLoc[idy].y)] = GAMEAREA_ENERGY;
 	}
 }
+
+
+void InitNewGameRule()
+{
+	// Init the 'new' game
+	oDroneLoc = oHomeLoc;
+	nTargetsFound = 0;			// gamescore reset
+	nEnergyFound = 0;
+	nGameTimer = nTargetCount * 30;
+}

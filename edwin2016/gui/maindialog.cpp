@@ -65,11 +65,7 @@ INT_PTR CALLBACK MaindialogProc(HWND hDlg, UINT nMessage, WPARAM wParam, LPARAM 
 			// Start the game
 			if (nId == IDOK)
 			{
-				// Init the 'new' game
-				oDroneLoc = oHomeLoc;
-				nTargetsFound = 0;			// gamescore reset
-				nEnergyFound = 0;
-				nGameTimer = nTargetCount * 30;
+				InitNewGameRule();
 
 				// Switch the game on
 				UpdateGamewindow();
