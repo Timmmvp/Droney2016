@@ -46,7 +46,7 @@ void DroneAtHomeRule()
 	if (nGameTimer < nHighscoreTime)
 	{
 		// Show the end of game dialog
-		DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_EOGDIALOG), hGamewindowWnd, (DLGPROC)TimedialogProc);
+		DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_EOGDIALOG), hGamewindowWnd, (DLGPROC)EOGdialogProc);
 		SetHighscore();
 		// Show the main dialog
 		DialogBox(hCurrentInstance, MAKEINTRESOURCE(IDD_MAINDIALOG), hGamewindowWnd, (DLGPROC)MaindialogProc);
